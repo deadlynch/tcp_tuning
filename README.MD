@@ -1,4 +1,4 @@
-# Tuning TCP/IP para TrueNAS/SMB 
+# Tuning TCP/IP para SMB 
 
 ## 1. Introdução
 Este documento descreve ajustes avançados de TCP/IP aplicáveis em sistemas Linux, originalmente configurados em uma VM TrueNAS para otimização de servidores SMB. O objetivo principal é melhorar a estabilidade de rede, reduzir perda de pacotes e aumentar o desempenho em ambientes com múltiplos usuários, especialmente em conexões via Wi-Fi.
