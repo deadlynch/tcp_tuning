@@ -50,11 +50,11 @@ O documento apresenta os ajustes em três grandes categorias:
 |---------|---------------------|
 | `ip link set eth0 txqueuelen 3000` | Aumenta a fila de transmissão do kernel para reduzir descartes de pacotes. |
 | `ip link show eth0` | Verifica o valor atual do txqueuelen. |
-| `ethtool -G eth0 rx 4096 tx 4096` | Ajusta ring buffers RX/TX (se suportado pelo driver). |
-| `ethtool -L eth0 combined 4` | Define 4 filas combinadas (multiqueue) para melhor distribuição de tráfego. |
-| `ethtool -K eth0 gro on` | Habilita Generic Receive Offload, reduzindo CPU em recebimento de pacotes. |
-| `ethtool -K eth0 gso on` | Habilita Generic Segmentation Offload, reduzindo CPU em envio de pacotes grandes. |
-| `ethtool -K eth0 tso on` | Habilita TCP Segmentation Offload para envio eficiente de pacotes grandes. |
+| `ethtool -G <interface> rx 4096 tx 4096` | Ajusta ring buffers RX/TX (se suportado pelo driver). |
+| `ethtool -L <interface> combined 4` | Define 4 filas combinadas (multiqueue) para melhor distribuição de tráfego. |
+| `ethtool -K <interface> gro on` | Habilita Generic Receive Offload, reduzindo CPU em recebimento de pacotes. |
+| `ethtool -K <interface> gso on` | Habilita Generic Segmentation Offload, reduzindo CPU em envio de pacotes grandes. |
+| `ethtool -K <interface> tso on` | Habilita TCP Segmentation Offload para envio eficiente de pacotes grandes. |
 
 ---
 
