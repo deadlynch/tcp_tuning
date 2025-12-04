@@ -48,8 +48,8 @@ O documento apresenta os ajustes em três grandes categorias:
 
 | Comando | Comentário / Objetivo |
 |---------|---------------------|
-| `ip link set eth0 txqueuelen 3000` | Aumenta a fila de transmissão do kernel para reduzir descartes de pacotes. |
-| `ip link show eth0` | Verifica o valor atual do txqueuelen. |
+| `ip link set <interface> txqueuelen 3000` | Aumenta a fila de transmissão do kernel para reduzir descartes de pacotes. |
+| `ip link show <interface>` | Verifica o valor atual do txqueuelen. |
 | `ethtool -G <interface> rx 4096 tx 4096` | Ajusta ring buffers RX/TX (se suportado pelo driver). |
 | `ethtool -L <interface> combined 4` | Define 4 filas combinadas (multiqueue) para melhor distribuição de tráfego. |
 | `ethtool -K <interface> gro on` | Habilita Generic Receive Offload, reduzindo CPU em recebimento de pacotes. |
