@@ -1,9 +1,26 @@
 # Tuning TCP/IP para TrueNAS/SMB 
 
 ## 1. Introdução
-Este documento descreve os ajustes aplicados em uma VM TrueNAS utilizada como servidor SMB, com foco em otimizar a estabilidade de rede, reduzir perdas de pacotes e melhorar o desempenho em ambientes com múltiplos usuários, especialmente clientes conectados via Wi-Fi.  
+Este documento descreve ajustes avançados de TCP/IP aplicáveis em sistemas Linux, originalmente configurados em uma VM TrueNAS para otimização de servidores SMB. O objetivo principal é melhorar a estabilidade de rede, reduzir perda de pacotes e aumentar o desempenho em ambientes com múltiplos usuários, especialmente em conexões via Wi-Fi.
 
-Os ajustes incluem configuração de filas de rede, buffers TCP, parâmetros de KeepAlive, backlog de conexões, retransmissões e gerenciamento de memória para muitas conexões simultâneas.
+Embora estas configurações tenham sido testadas em servidores NAS, elas são amplamente aplicáveis em qualquer cenário que envolva:
+
+Servidores de arquivos (SMB, NFS) com múltiplos clientes simultâneos;
+
+Servidores web e aplicações em tempo real com alto número de conexões simultâneas;
+
+Bancos de dados e replicações que exigem alta confiabilidade TCP;
+
+Servidores de e-mail com grande volume de contas ativas;
+
+Soluções de backup e sincronização de dados de grande porte;
+
+Serviços de VPN e túneis de rede com múltiplos clientes conectados;
+
+Ambientes virtualizados ou containers com comunicação intensiva entre hosts ou VMs.
+
+As otimizações contemplam filas de rede, buffers TCP, parâmetros de KeepAlive, backlog de conexões, retransmissões e gerenciamento de memória para muitas conexões simultâneas.
+Essas alterações permitem que o sistema lide de forma mais eficiente com tráfego intenso, múltiplas conexões simultâneas, latência variável e transferências de grandes volumes de dados, resultando em maior desempenho, estabilidade e confiabilidade.
 
 ---
 
